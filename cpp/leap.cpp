@@ -11,12 +11,3 @@ namespace leap {
         return isLeapYear;
     }
 }  // namespace leap
-
-int main(){
-    int year{};
-    for(int year = 0; year <= 2030; year += 4){
-        if(leap::is_leap_year(year)) std::cout << year << " is a leap year." << std::endl;
-        else std::cout << year << " is not a leap year!" << std::endl;
-    }
-    return 0xA;
-}

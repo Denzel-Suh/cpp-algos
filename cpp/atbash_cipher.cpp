@@ -12,9 +12,9 @@ namespace atbash_cipher {
         return encoded;
     }
 
-    std::string char_swap(std::string text, int l){
+    std::string char_swap(std::string text, int l){     //Swaps the respective characters with their counterparts after using the atbash cipher
         for(i = 0; i < l; i++){
-            if((text[i] > 96 && text[i] < 123)){
+            if(isalpha(text[i])){
                 switch(text[i]){
                     case 'a': text[i] = 'z';
                         break;
@@ -74,7 +74,7 @@ namespace atbash_cipher {
         return text;
     }
 
-    std::string grouper(std::string text, int l){
+    std::string grouper(std::string text, int l){       //Selects groups of fives and applies the space as fit
         std::string encoded{};
         for(i = 0; i < l; i++){
             if(((i) % 5 == 0) && (i != 0)){
@@ -85,18 +85,18 @@ namespace atbash_cipher {
         return encoded;
     }
 
-    std::string decode(std::string text){
+    std::string decode(std::string text){               //Decodes words already encoded by the atbash_cipher::encode function
         std::string encoded{};
         int m = text.length();
         encoded = stripper(text, m);
         return char_swap(encoded, m);
     }
 
-    std::string stripper(std::string text, int l){
+    std::string stripper(std::string text, int l){      //Strips word to be encoded of all spaces, punctuations and unwanted characters leaving only letters and numbers
         std::string encoded{};
         for(i = 0; i < l; i++){
             text[i] = tolower(text[i]);
-            if((text[i] > 96 && text[i] < 123) || (text[i] > 057 && text[i] < 072)){
+            if(isalpha(text[i])){
                 encoded += text[i];
             }
         }

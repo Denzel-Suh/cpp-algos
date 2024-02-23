@@ -7,10 +7,10 @@ namespace rotational_cipher{
         for(char &c: intext){
             if(isalpha(c)){
                 if(isupper(c)){
-                    (c + key > 90) ? outext += c + key - 25 : outext += c + key;
+                    (c + key > 90) ? outext += c + key - 26 : outext += c + key;
                 }
                 else if(islower(c)){
-                    (c + key > 122) ? outext += c + key - 25 : outext += c + key;
+                    (c + key > 122) ? outext += c + key - 26 : outext += c + key;
                 }
             }
             else outext += c;

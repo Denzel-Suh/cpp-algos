@@ -3,7 +3,6 @@
 namespace rotational_cipher{
     std::string rotate(std::string intext, int key){
         std::string outext {};
-        int holding{};
         for(char &c: intext){
             if(isalpha(c)){
                 if(isupper(c)){

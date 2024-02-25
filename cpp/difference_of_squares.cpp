@@ -6,12 +6,7 @@ namespace difference_of_squares {
         return n*(n+1)/2 * n*(n+1)/2;
     }
     int sum_of_squares(int n){
-    int sum{};
-        for(i = 1; i <= n; i++){
-            sum += i * i;
-            std::cout << "sum is: " << sum << " and i is: " << i << std::endl;
-        }
-        return sum;
+        return n*(n+1)*(2*n+1)/6;
     }
     int difference(int n){
         return square_of_sum(n) - sum_of_squares(n);

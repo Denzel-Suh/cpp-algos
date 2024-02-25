@@ -1,7 +1,6 @@
 #include "difference_of_squares.h"
 
 namespace difference_of_squares {
-    int i{};
     int square_of_sum(int n){
         return n*(n+1)/2 * n*(n+1)/2;
     }

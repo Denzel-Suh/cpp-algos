@@ -12,8 +12,3 @@ namespace difference_of_squares {
         return square_of_sum(n) - sum_of_squares(n);
     }
 }  // namespace difference_of_squares
-
-int main(){
-    std::cout << "[Testing 123]" << difference_of_squares::sum_of_squares(5) << std::endl;
-    return 0;
-}

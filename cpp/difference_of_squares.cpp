@@ -2,8 +2,8 @@
 
 namespace difference_of_squares {
     int i{};
-    int sum{};
     int square_of_sum(int n){
+    int sum{};
         for(i = 1; i <= n; i++){
             sum += i;
             std::cout << "sum is: " << sum << " and i is: " << i << std::endl;
@@ -11,7 +11,8 @@ namespace difference_of_squares {
         return sum * sum;
     }
     int sum_of_squares(int n){
-        for(i = 0; i <= n; i++){
+    int sum{};
+        for(i = 1; i <= n; i++){
             sum += i * i;
             std::cout << "sum is: " << sum << " and i is: " << i << std::endl;
         }
@@ -23,6 +24,6 @@ namespace difference_of_squares {
 }  // namespace difference_of_squares
 
 int main(){
-    std::cout << "[Testing 123]" << difference_of_squares::square_of_sum(5) << std::endl;
+    std::cout << "[Testing 123]" << difference_of_squares::sum_of_squares(5) << std::endl;
     return 0;
 }

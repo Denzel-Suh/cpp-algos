@@ -4,9 +4,9 @@ namespace trinary {
     int to_decimal(std::string tri){
         int *deci;
         int *p = deci;
-        std::cout << "p is: " << p << " | *p is: " << *p;
         for(char c: tri){
-            if((int)c > 2) return 0;
+            std::cout << "---c is: " << c <<  "---";
+            if(std::stoi(c, nullptr, 10) > 2) return 0;
             *p = c;
             p++;
         }
@@ -18,6 +18,6 @@ namespace trinary {
 }  // namespace trinary
 
 int main(){
-    trinary::to_decimal("123");
+    std::cout << "Sid is (function) " << trinary::to_decimal("122");
     return 0;
 }

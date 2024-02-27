@@ -6,4 +6,6 @@ namespace trinary {
     }
 }  // namespace trinary
 
-int main()
+int main(){
+    return 0;
+}

@@ -5,3 +5,5 @@ namespace trinary {
         if()
     }
 }  // namespace trinary
+
+int main()

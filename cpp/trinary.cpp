@@ -2,7 +2,11 @@
 
 namespace trinary {
     int to_decimal(std::string tri){
-        if()
+        i
+        for(char c: tri){
+            if((int)c > 2) return 0;
+
+        }
     }
 }  // namespace trinary
 

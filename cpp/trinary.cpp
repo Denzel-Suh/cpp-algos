@@ -2,12 +2,13 @@
 
 namespace trinary {
     int to_decimal(std::string tri){
-        int *deci;
+        int deci[10], pb{};
         int *p = deci;
         for(char c: tri){
-            std::cout << "---c is: " << c <<  "---";
-            if(std::stoi(c, nullptr, 10) > 2) return 0;
-            *p = c;
+            pb = c - '0';
+            if(pb > 2) std::cout << "Lazlo\n";
+            std::cout << "deci is " << deci[0] << " and &deci is " << &deci << " p is " << p << " and *p is " << *p << std::endl;
+            *p = pb;
             p++;
         }
         for(int i = 0; i < tri.length(); i++){
@@ -18,6 +19,6 @@ namespace trinary {
 }  // namespace trinary
 
 int main(){
-    std::cout << "Sid is (function) " << trinary::to_decimal("122");
+    std::cout << trinary::to_decimal("102");
     return 0;
 }

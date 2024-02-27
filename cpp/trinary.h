@@ -2,6 +2,7 @@
 #define TRINARY_H
 
 #include <iostream>
+#include <cmath>
 
 namespace trinary {
     int to_decimal(std::string tri);

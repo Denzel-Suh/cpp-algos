@@ -1,7 +1,6 @@
 #if !defined(TRINARY_H)
 #define TRINARY_H
 
-#include <iostream>
 #include <cmath>
 
 namespace trinary {

@@ -5,12 +5,13 @@ namespace trinary {
         int fnum{}, *p = &fnum, count{}, result{};
         for(char c: tri){
             *p = c - '0';
+            std::cout << "p| " << p << ":- - -:bizaz| " << *p << std::endl;
             p++, count++;
         }
-        p = &fnum;
+        //p = &fnum;
         for(int i = 0; i < count; i++){
             result += *(p - i) * pow(3, i-1);
-            std::cout << "*p - i: " << *(p - i) << "| i: " << pow(3,i-1) << std::endl;
+            std::cout << "value of i, p-i-1, *(p-i), power()|" << i << "| " << p-i-1 << "| " << *(p-i-1) << "| " << pow(3, i) << std::endl;
         }
         return result;
     }

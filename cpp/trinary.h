@@ -2,9 +2,10 @@
 #define TRINARY_H
 
 #include <cmath>
+#include <string>
 
 namespace trinary {
-    int to_decimal(std::string tri);
+    int to_decimal(std::string);
 }  // namespace trinary
 
 #endif // TRINARY_H

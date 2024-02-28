@@ -14,4 +14,12 @@ namespace trinary {
         }
         return result;
     }
+    int to_decimal2(std::string tri){
+        int result{};
+        for(char c: tri){
+            if(c < 48 || c > 50) return 0;
+            result = result * 3 + c - '0';
+        }
+        return result;
+    }
 }  // namespace trinary

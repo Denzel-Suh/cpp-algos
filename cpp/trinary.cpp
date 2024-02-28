@@ -4,7 +4,7 @@ namespace trinary {
     int to_decimal(std::string tri){
         int fnum[15], *p = fnum, count{}, result{};
         for(char c: tri){               //Use a loop to go through the string
-            if(c > 50) return 0;        //Checks if character is greater than 2, hence not a trinary and returns 0
+            if(c > 50 || c < 48) return 0;        //Checks if character is greater than 2, hence not a trinary and returns 0
             *p = c - '0';
             p++, count++;
         }

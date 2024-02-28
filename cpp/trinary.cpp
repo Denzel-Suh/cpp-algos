@@ -8,10 +8,10 @@ namespace trinary {
             std::cout << "p| " << p << ":- - -:bizaz| " << *p << std::endl;
             p++, count++;
         }
-        //p = &fnum;
+        p = &fnum;
         for(int i = 0; i < count; i++){
-            result += *(p - i) * pow(3, i-1);
-            std::cout << "value of i, p-i-1, *(p-i), power()|" << i << "| " << p-i-1 << "| " << *(p-i-1) << "| " << pow(3, i) << std::endl;
+            result += *(p + i) * pow(3, i-1);
+            std::cout << "value of i, p+i, *(p+i), power()|" << i << "| " << p+i << "| " << *(p+i) << "| " << pow(3, i) << std::endl;
         }
         return result;
     }

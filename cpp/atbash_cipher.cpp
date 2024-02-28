@@ -1,7 +1,6 @@
 #include "atbash_cipher.h"
 
 namespace atbash_cipher {
-    int i{0};
     std::string encode(std::string text){
         std::string encoded{};
         encoded = atbash_cipher::stripper(text, text.length());
@@ -29,6 +28,7 @@ namespace atbash_cipher {
     }
 
     std::string char_swap(std::string text, int l){     //Swaps the respective characters with their counterparts after using the atbash cipher
+        int i{0};
         for(i = 0; i < l; i++){
             if(isalpha(text[i])){
                 switch(text[i]){
@@ -92,6 +92,7 @@ namespace atbash_cipher {
 
     std::string grouper(std::string text, int l){       //Selects groups of fives and applies the space character as fit
         std::string encoded{};
+        int i{0};
         for(i = 0; i < l; i++){
             if(((i) % 5 == 0) && (i != 0)){
                 encoded += ' ';
@@ -117,6 +118,7 @@ namespace atbash_cipher {
     }
 
     std::string stripper(std::string text, int l){      //Strips word to be encoded of all spaces, punctuations and unwanted characters leaving only letters and numbers
+        int i{0};
         std::string encoded{};
         for(i = 0; i < l; i++){
             text[i] = tolower(text[i]);

@@ -3,9 +3,9 @@
 namespace atbash_cipher {
     std::string encode(std::string text){
         std::string encoded{};
-        encoded = atbash_cipher::stripper(text, text.length());
-        encoded = atbash_cipher::char_swap(encoded, encoded.length());
-        encoded = atbash_cipher::grouper(encoded, encoded.length());
+        encoded = atbash_cipher::stripper(text);
+        encoded = atbash_cipher::char_swap(encoded);
+        encoded = atbash_cipher::grouper(encoded);
         return encoded;
     }
 
@@ -27,9 +27,9 @@ namespace atbash_cipher {
         return outext;
     }
 
-    std::string char_swap(std::string text, int l){     //Swaps the respective characters with their counterparts after using the atbash cipher
+    std::string char_swap(std::string text){     //Swaps the respective characters with their counterparts after using the atbash cipher
         int i{0};
-        for(i = 0; i < l; i++){
+        for(i = 0; i < text.length(); i++){
             if(isalpha(text[i])){
                 switch(text[i]){
                     case 'a': text[i] = 'z';
@@ -90,10 +90,10 @@ namespace atbash_cipher {
         return text;
     }
 
-    std::string grouper(std::string text, int l){       //Selects groups of fives and applies the space character as fit
+    std::string grouper(std::string text){       //Selects groups of fives and applies the space character as fit
         std::string encoded{};
         int i{0};
-        for(i = 0; i < l; i++){
+        for(i = 0; i < text.length(); i++){
             if(((i) % 5 == 0) && (i != 0)){
                 encoded += ' ';
             }
@@ -117,10 +117,10 @@ namespace atbash_cipher {
         return outext;
     }
 
-    std::string stripper(std::string text, int l){      //Strips word to be encoded of all spaces, punctuations and unwanted characters leaving only letters and numbers
+    std::string stripper(std::string text){      //Strips word to be encoded of all spaces, punctuations and unwanted characters leaving only letters and numbers
         int i{0};
         std::string encoded{};
-        for(i = 0; i < l; i++){
+        for(i = 0; i < text.length(); i++){
             text[i] = tolower(text[i]);
             if(isalpha(text[i])){
                 encoded += text[i];

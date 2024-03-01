@@ -1,6 +1,10 @@
 #include "atbash_cipher.h"
 
 namespace atbash_cipher {
+    std::string char_swap(std::string text, int l);
+    std::string grouper(std::string text, int l);
+    std::string stripper(std::string text, int l);
+    
     std::string encode(std::string text){
         std::string encoded{};
         encoded = atbash_cipher::stripper(text);

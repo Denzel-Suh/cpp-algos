@@ -76,7 +76,3 @@ namespace atbash_cipher {
         return encoded;
     }
 }  // namespace atbash_cipher
-
-int main(){
-    std::cout << "Answer| " << atbash_cipher::encode("yes");
-}

@@ -1,9 +1,9 @@
 #include "atbash_cipher.h"
 
 namespace atbash_cipher {
-    std::string char_swap(std::string text, int l);
-    std::string grouper(std::string text, int l);
-    std::string stripper(std::string text, int l);
+    std::string char_swap(std::string text);
+    std::string grouper(std::string text);
+    std::string stripper(std::string text);
     
     std::string encode(std::string text){
         std::string encoded{};
@@ -108,8 +108,8 @@ namespace atbash_cipher {
 
     std::string decode(std::string text){               //Decodes words already encoded by the atbash_cipher::encode function
         std::string encoded{};
-        encoded = stripper(text, text.length());
-        return char_swap(encoded, text.length());
+        encoded = stripper(text);
+        return char_swap(encoded);
     }
 
     std::string decode2(std::string intext){            //A second approach to decoding the encoded words. Works by manipulating ASCII value stored in the character type.

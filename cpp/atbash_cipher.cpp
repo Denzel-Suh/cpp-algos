@@ -31,65 +31,9 @@ namespace atbash_cipher {
         return outext;
     }
 
-    std::string char_swap(std::string text){     //Swaps the respective characters with their counterparts after using the atbash cipher
-        int i{0};
-        for(i = 0; i < text.length(); i++){
-            if(isalpha(text[i])){
-                switch(text[i]){
-                    case 'a': text[i] = 'z';
-                        break;
-                    case 'b': text[i] = 'y';
-                        break;
-                    case 'c': text[i] = 'x';
-                        break;
-                    case 'd': text[i] = 'w';
-                        break;
-                    case 'e': text[i] = 'v';
-                        break;
-                    case 'f': text[i] = 'u';
-                        break;
-                    case 'g': text[i] = 't';
-                        break;
-                    case 'h': text[i] = 's';
-                        break;
-                    case 'i': text[i] = 'r';
-                        break;
-                    case 'j': text[i] = 'q';
-                        break;
-                    case 'k': text[i] = 'p';
-                        break;
-                    case 'l': text[i] = 'o';
-                        break;
-                    case 'm': text[i] = 'n';
-                        break;
-                    case 'n': text[i] = 'm';
-                        break;
-                    case 'o': text[i] = 'l';
-                        break;
-                    case 'p': text[i] = 'k';
-                        break;
-                    case 'q': text[i] = 'j';
-                        break;
-                    case 'r': text[i] = 'i';
-                        break;
-                    case 's': text[i] = 'h';
-                        break;
-                    case 't': text[i] = 'g';
-                        break;
-                    case 'u': text[i] = 'f';
-                        break;
-                    case 'v': text[i] = 'e';
-                        break;
-                    case 'w': text[i] = 'd';
-                        break;
-                    case 'x': text[i] = 'c';
-                        break;
-                    case 'y': text[i] = 'b';
-                        break;
-                    case 'z': text[i] = 'a';
-                        break;
-                }
-            }
+    std::string char_swap(std::string text){
+        for(char &c: text){
+            if(isalpha(c)) c = 122 - c + 97;
         }
         return text;
     }
@@ -122,14 +66,17 @@ namespace atbash_cipher {
     }
 
     std::string stripper(std::string text){      //Strips word to be encoded of all spaces, punctuations and unwanted characters leaving only letters and numbers
-        int i{0};
         std::string encoded{};
-        for(i = 0; i < text.length(); i++){
-            text[i] = tolower(text[i]);
-            if(isalpha(text[i])){
-                encoded += text[i];
+        for(char c: text){
+            c = tolower(c);
+            if(isalpha(c)){
+                encoded += c;
             }
         }
         return encoded;
     }
 }  // namespace atbash_cipher
+
+int main(){
+    std::cout << "Answer| " << atbash_cipher::encode("yes");
+}

@@ -2,18 +2,25 @@
 
 namespace luhn {
     bool valid(std::string card_no){
+        int cards[12]{0,0,0,0,0,0,0,0,0,0,0,0}, count{0};
         std::string clean_no{};
         for(char c: card_no){
             if(isdigit(c)){
-                clean_no += c;
+                cards[count] += c - '0';
+                std::cout << "cards[i]| " << cards[count] << std::endl;
             }
+            count++;
         }
-        int card = std::stoll(clean_no);
-        std::cout << "card = " << card << "| close your eyes| " << clean_no;
+        for(int i = 0; i < 12; i++){
+            if(i % 2 == 0){
+                cards[i] += cards[i];
+            }
+            std::cout << "Lacy-cards[i]| " << cards[i] << std::endl;
+        }
         return false;
     }
 }  // namespace luhn
 
 int main(){
-    luhn::valid("292992--093900 464-46");
+    std::cout << luhn::valid("292992--093900");
 }

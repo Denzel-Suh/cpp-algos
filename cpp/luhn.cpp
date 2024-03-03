@@ -8,6 +8,12 @@ namespace luhn {
                 clean_no += c;
             }
         }
-        int card = atoi(clean_no.to_str());
+        int card = atoi(clean_no.c_str());
+        std::cout << "card = " << card;
+        return false;
     }
 }  // namespace luhn
+
+int main(){
+    luhn::valid("2929929--090 289 27");
+}

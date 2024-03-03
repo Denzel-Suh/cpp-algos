@@ -9,7 +9,7 @@ namespace luhn {
             }
         }
         int card = atoi(clean_no.c_str());
-        std::cout << "card = " << card;
+        std::cout << "card = " << card << "| close your eyes| " << clean_no;
         return false;
     }
 }  // namespace luhn

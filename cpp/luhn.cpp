@@ -16,7 +16,7 @@ namespace luhn {
             if(i % 2 == 1){
                 cards[i] + cards[i] < 9 ? cards[i] += cards[i] : cards[i] += cards[i] - 9;
             }
-            std::cout << "summer " << sum << "\t";
+            // std::cout << "summer " << sum << "\t";
             sum += cards[i];
         }
         // std::cout << "Sum ore wa: " << sum << "\n";

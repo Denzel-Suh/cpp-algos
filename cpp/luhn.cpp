@@ -2,25 +2,30 @@
 
 namespace luhn {
     bool valid(std::string card_no){
-        int cards[12]{0,0,0,0,0,0,0,0,0,0,0,0}, count{0};
+        int cards[16]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, count{0}, sum{0};
         std::string clean_no{};
         for(char c: card_no){
             if(isdigit(c)){
-                cards[count] += c - '0';
-                std::cout << "cards[i]| " << cards[count] << std::endl;
+                cards[count] = c - '0';
+                // std::cout << "high cardo " << cards[count] << "\t";
+                count++;
             }
-            count++;
         }
-        for(int i = 0; i < 12; i++){
-            if(i % 2 == 0){
-                cards[i] += cards[i];
+        for(int i = 15; i >= 0; i--){
+            // std::cout << "mercado cardo " << cards[i] << "\t";
+            if(i % 2 == 1){
+                cards[i] + cards[i] < 9 ? cards[i] += cards[i] : cards[i] += cards[i] - 9;
             }
-            std::cout << "Lacy-cards[i]| " << cards[i] << std::endl;
+            // std::cout << "summer " << sum << "\t";
+            sum += cards[i];
         }
+        std::cout << "Sum ore wa: " << sum << "\n";
+        if(sum % 10 == 0 && sum / 10 > 0) return true;
         return false;
     }
 }  // namespace luhn
 
 int main(){
-    std::cout << luhn::valid("292992--093900");
+    std::cout << luhn::valid("59") << std::endl;
+    
 }

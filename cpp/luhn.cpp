@@ -7,7 +7,7 @@ namespace luhn {
         for(char c: card_no){
             if(isdigit(c)){
                 cards[count] = c - '0';
-                // std::cout << "high cardo " << cards[count] << "\t";
+                std::cout << "high cardo " << cards[count] << "\t";
                 count++;
             }
         }

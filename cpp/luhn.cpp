@@ -27,5 +27,5 @@ namespace luhn {
 
 int main(){
     std::cout << luhn::valid("59") << std::endl;
-    
+    return 0;
 }

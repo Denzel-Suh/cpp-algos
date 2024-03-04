@@ -7,12 +7,12 @@ namespace luhn {
         for(char c: card_no){
             if(isdigit(c)){
                 cards[count] = c - '0';
-                std::cout << "high cardo " << cards[count] << "\t";
+                // std::cout << "high cardo " << cards[count] << "\t";
                 count++;
             }
         }
         for(int i = 15; i >= 0; i--){
-            // std::cout << "mercado cardo " << cards[i] << "\t";
+            std::cout << "mercado cardo " << cards[i] << "\t";
             if(i % 2 == 1){
                 cards[i] + cards[i] < 9 ? cards[i] += cards[i] : cards[i] += cards[i] - 9;
             }

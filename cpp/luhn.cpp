@@ -19,7 +19,7 @@ namespace luhn {
             std::cout << "summer " << sum << "\t";
             sum += cards[i];
         }
-        std::cout << "Sum ore: " << sum << "\n";
+        // std::cout << "Sum ore wa: " << sum << "\n";
         if(sum % 10 == 0 && sum / 10 > 0) return true;
         return false;
     }

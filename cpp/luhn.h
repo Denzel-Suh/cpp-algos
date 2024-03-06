@@ -2,7 +2,6 @@
 #define LUHN_H
 
 #include <string>
-#include <iostream>
 
 namespace luhn {
     bool valid(std::string card_no);

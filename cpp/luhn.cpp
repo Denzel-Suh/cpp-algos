@@ -47,8 +47,3 @@ namespace luhn2 {
         return false;
     }
 }  // namespace luhn
-
-int main(){
-    std::cout << luhn::valid("0000 0") << std::endl;
-    return 0;
-}

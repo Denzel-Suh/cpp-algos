@@ -6,12 +6,13 @@ namespace luhn{
         for(char c: rawtext)
             if(isdigit(c)) card_no += c;
         int p{0}, sum{0};       //Placeholder for mod operation is p and sum holds sum of all digits
-        for(int i = card_no.length(); i >= 0; i--){
+        for(int i = card_no.length() - 1; i >= 0; i--){
             card_no.length() % 2 == 0 ? p = 0 : p = 1;
+            // std::cout << "Card length = " << card_no.length() << "...\tp = " << p << " and card_no[i] is " << card_no[i] << std::endl;
             if(i % 2 == p) (card_no[i] - '0') * 2 > 9 ? card_no[i] = (card_no[i] * 2) - '0' - 9 : card_no[i] = (card_no[i] - '0') * 2;
             sum += card_no[i] - '0';
         }
-        if(sum % 10 == 0) return true;
+        if(sum % 10 == 0 && sum / 10 > 0) return true;
         return false;
     }
 }
@@ -42,6 +43,6 @@ namespace luhn2 {
 }  // namespace luhn
 
 int main(){
-    std::cout << luhn::valid("59") << std::endl;
+    std::cout << luhn::valid("059") << std::endl;
     return 0;
 }

@@ -14,10 +14,10 @@ namespace luhn{
             card_no.length() % 2 == 0 ? p = 0 : p = 1;
             // std::cout << "p = " << p << " and card_no[i] is " << card_no[i] << std::endl;
             if(i % 2 == p) (card_no[i] - '0') * 2 > 9 ? card_no[i] = (card_no[i] * 2) - '0' - 9 : card_no[i] = (card_no[i] - '0') * 2 + '0';
-            std::cout << "Card_no[" << i << "] = " << card_no[i] << std::endl; 
+            // std::cout << "Card_no[" << i << "] = " << card_no[i] << std::endl; 
             sum += card_no[i] - '0';
         }
-        std::cout << "\n\nIntelecto sumo a: " << sum << "\n\n\t";
+        // std::cout << "\n\nIntelecto sumo a: " << sum << "\n\n\t";
         if(sum % 10 == 0) return true;
         return false;
     }

@@ -12,3 +12,8 @@ namespace hexadecimal {
         return 0;
     }
 }  // namespace hexadecimal
+
+int main(){
+    std::cout << hexadecimal::decimal("f");
+    return 0;
+}

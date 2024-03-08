@@ -2,6 +2,7 @@
 #define HEXADECIMAL_H
 
 #include <string>
+#include <iostream>
 
 namespace hexadecimal {
     int decimal(std::string);

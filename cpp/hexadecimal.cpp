@@ -9,11 +9,11 @@ namespace hexadecimal {
             isdigit(c) ? p = '0' : p = 'W';
             value = value * 16 + c - p;
         }
-        return 0;
+        return value;
     }
 }  // namespace hexadecimal
 
 int main(){
-    std::cout << hexadecimal::decimal("f");
+    std::cout << hexadecimal::decimal("gf");
     return 0;
 }

@@ -11,3 +11,8 @@ namespace reverse_string {
         return text;
     }
 }  // namespace reverse_string
+
+int main(){
+    std::cout << reverse_string::reverse_string("yeh");
+    return 0;
+}

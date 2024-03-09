@@ -2,6 +2,7 @@
 #define REVERSE_STRING_H
 
 #include <string>
+#include <iostream>
 
 namespace reverse_string {
     std::string reverse_string(std::string intext);

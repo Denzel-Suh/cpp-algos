@@ -5,6 +5,9 @@
 // Round down all provided student scores.
 std::vector<int> round_down_scores(std::vector<double> student_scores) {
     // TODO: Implement round_down_scores
+    for(auto i: student_scores){
+        vector 
+    }
     return {};
 }
 

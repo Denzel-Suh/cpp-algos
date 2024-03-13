@@ -5,11 +5,11 @@
 // Round down all provided student scores.
 std::vector<int> round_down_scores(std::vector<double> student_scores) {
     // TODO: Implement round_down_scores
-    // for(auto i: student_scores){
-    //     vector 
-    // }
-    // return {};
-    return static_cast<std::vector<int>>(student_scores);
+    std::vector<int> rounded{};
+    for(auto i: student_scores){
+        rounded.emplace_back(static_cast<int> i);
+    }
+    return rounded;
 }
 
 

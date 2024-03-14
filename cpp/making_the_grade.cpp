@@ -6,9 +6,7 @@
 std::vector<int> round_down_scores(std::vector<double> student_scores) {
     // TODO: Implement round_down_scores
     std::vector<int> rounded{};
-    for(auto i: student_scores){
-        rounded.emplace_back(static_cast<int>(i));
-    }
+    for(const auto &i: student_scores) rounded.emplace_back(static_cast<int>(i));
     return rounded;
 }
 
@@ -16,12 +14,17 @@ std::vector<int> round_down_scores(std::vector<double> student_scores) {
 // Count the number of failing students out of the group provided.
 int count_failed_students(std::vector<int> student_scores) {
     // TODO: Implement count_failed_students
-    return 0;
+    int count{0};
+    for(const auto &i: student_scores) if(i < 41) count++;
+    return count;
 }
 
 // Determine how many of the provided student scores were 'the best' based on the provided threshold.
 std::vector<int> above_threshold(std::vector<int> student_scores, int threshold) {
     // TODO: Implement above_threshold
+    for(int i = 0; i < ){
+        if(i < threshold)
+    }
     return {};
 }
 

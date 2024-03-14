@@ -22,10 +22,10 @@ int count_failed_students(std::vector<int> student_scores) {
 // Determine how many of the provided student scores were 'the best' based on the provided threshold.
 std::vector<int> above_threshold(std::vector<int> student_scores, int threshold) {
     // TODO: Implement above_threshold
-    for(int i = 0; i < ){
-        if(i < threshold)
+    for(int i = 0; i < student_scores.size() - 1; i++){
+        if(student_scores.at(i) < threshold) pop_back(student_scores.at(i));
     }
-    return {};
+    return student_scores;
 }
 
 // Create a list of grade thresholds based on the provided highest grade.

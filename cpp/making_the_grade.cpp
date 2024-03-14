@@ -6,7 +6,7 @@
 std::vector<int> round_down_scores(std::vector<double> student_scores) {
     // TODO: Implement round_down_scores
     std::vector<int> rounded{};
-    for(const auto &i: student_scores) rounded.emplace_back(static_cast<int>(i));
+    for(const auto &i: student_scores) rounded.push_back(static_cast<int>(i));
     return rounded;
 }
 
@@ -23,7 +23,8 @@ int count_failed_students(std::vector<int> student_scores) {
 std::vector<int> above_threshold(std::vector<int> student_scores, int threshold) {
     // TODO: Implement above_threshold
     for(int i = 0; i < student_scores.size() - 1; i++){
-        if(student_scores.at(i) < threshold) pop_back(student_scores.at(i));
+        // std::cout << "i :" << student_scores[i] << " and size is " << student_scores.size() <<  std::endl;
+        if(student_scores.at(i) < threshold) student_scores.erase(student_scores.begin() + i);
     }
     return student_scores;
 }

@@ -20,17 +20,28 @@ int count_failed_students(std::vector<int> student_scores) {
 }
 
 // Determine how many of the provided student scores were 'the best' based on the provided threshold.
-std::vector<int> above_threshold(std::vector<int> student_scores, int threshold) {
-    // TODO: Implement above_threshold
-    for(int i = 0; i < student_scores.size(); i++){
-        // std::cout << "i :" << student_scores[i] << " and size is " << student_scores.size() <<  std::endl;
-        if(student_scores.at(i) < threshold){
-            // student_scores.erase(student_scores.begin() + i);
-            std::cout << (student_scores.at(i)) << " In your eyes ! ";
+std::vector<int> above_threshold(const std::vector<int>& student_scores, int threshold) {
+    std::vector<int> above_threshold_scores;
+
+    for(const auto& score : student_scores) {
+        if(score >= threshold) {
+            above_threshold_scores.push_back(score);
         }
     }
-    return student_scores;
+
+    return above_threshold_scores;
 }
+// std::vector<int> above_threshold(std::vector<int> student_scores, int threshold) {
+//     // TODO: Implement above_threshold
+//     for(int i = 0; i < student_scores.size(); i++){
+//         // std::cout << "i :" << student_scores[i] << " and size is " << student_scores.size() <<  std::endl;
+//         if(student_scores.at(i) < threshold){
+//             student_scores.erase(student_scores.begin() + i);
+//             // std::cout << (student_scores.at(i)) << " In your eyes ! ";
+//         }
+//     }
+//     return student_scores;
+// }
 
 // Create a list of grade thresholds based on the provided highest grade.
 std::array<int, 4> letter_grades(int highest_score) {

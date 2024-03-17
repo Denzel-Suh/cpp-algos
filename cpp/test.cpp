@@ -9,7 +9,7 @@ int main(){
     for(const auto &i : test) cout << "Results: " << i << endl;
     // cout << test.size() << "~\nMoe moe kyun~\n\t";
     test = above_threshold(test, 40);
-    // cout << test.size() << "~\nMoe moe kyun~\n\t";
+    cout << test.size() << "~\nMoe moe kyun~\n\t";
     for(const auto &i : test) cout << "Results: " << i << endl;
     return 0;
 }

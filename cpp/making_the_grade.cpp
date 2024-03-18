@@ -31,9 +31,11 @@ std::vector<int> above_threshold(std::vector<int> student_scores, int threshold)
 std::array<int, 4> letter_grades(int highest_score) {
     // TODO: Implement letter_grades
     std::array<int, 4> letters;
+    int place{41};
     int range = (highest_score - 40) / 4;
-    while(range <= highest_score){
-        std::cout << "Range is : " << 41 + range;
+    while(place <= highest_score){
+        std::cout << "Range is : " << place << std::endl;
+        place += range;
     }
     return {};
 }

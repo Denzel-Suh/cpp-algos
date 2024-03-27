@@ -30,14 +30,16 @@ std::vector<int> above_threshold(std::vector<int> student_scores, int threshold)
 // Create a list of grade thresholds based on the provided highest grade.
 std::array<int, 4> letter_grades(int highest_score) {
     // TODO: Implement letter_grades
-    std::array<int, 4> letters;
-    int place{41};
+    std::array<int, 4> grades;
+    grades.fill(0);
+    int value{41};
     int range = (highest_score - 40) / 4;
-    while(place <= highest_score){
-        std::cout << "Range is : " << place << std::endl;
-        place += range;
+    for(int i = 0; i < 4; i++){
+        grades.at(i) = value;
+        std::cout << "20th century boys: " << value << std::endl;
+        value += range;
     }
-    return {};
+    return grades;
 }
 
 // Organize the student's rank, name, and grade information in ascending order.

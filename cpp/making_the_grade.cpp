@@ -47,12 +47,12 @@ std::vector<std::string> student_ranking(std::vector<int> student_scores, std::v
     // TODO: Implement student_ranking
     std::vector<std::string> student_ranks;
     std::array<std::string, 2> format_container {". ", ": "};
-
     int i = 1;
     std::string parser{};
     for(const auto &score: student_scores){
-        parser += std::to_string(i) + format_container.at(0) + std::to_string(score) + format_container.at(1) + student_names.at(i-1);
+        parser = std::to_string(i) + format_container.at(0) + student_names.at(i-1) + format_container.at(1) + std::to_string(score);
         student_ranks.push_back(parser);
+        i++;
     }
     return student_ranks;
 }

@@ -6,7 +6,7 @@
 std::vector<int> round_down_scores(std::vector<double> student_scores) {
     // TODO: Implement round_down_scores
     std::vector<int> rounded{};
-    for(const auto &i: student_scores) rounded.push_back(static_cast<int>(i));
+    for(auto i: student_scores) rounded.emplace_back(static_cast<int>(i));
     return rounded;
 }
 
@@ -27,11 +27,9 @@ std::vector<int> above_threshold(std::vector<int> student_scores, int threshold)
     return above_threshold;
 }
 
-// Create a list of grade thresholds based on the provided highest grade.
 std::array<int, 4> letter_grades(int highest_score) {
     // TODO: Implement letter_grades
     std::array<int, 4> grades;
-    grades.fill(0);
     int range = (highest_score - 40) / 4;
     for(int i = 0; i < 4; i++){
         grades.at(i) = i * range + 41;
@@ -43,13 +41,8 @@ std::array<int, 4> letter_grades(int highest_score) {
 std::vector<std::string> student_ranking(std::vector<int> student_scores, std::vector<std::string> student_names) {
     // TODO: Implement student_ranking
     std::vector<std::string> student_ranks;
-    std::array<std::string, 2> format_container {". ", ": "};
-    int i = 1;
-    std::string parser{};
-    for(const auto &score: student_scores){
-        parser = std::to_string(i) + format_container.at(0) + student_names.at(i-1) + format_container.at(1) + std::to_string(score);
-        student_ranks.push_back(parser);
-        i++;
+    for(int i = 0; i< student_scores.size(); i++){
+        student_ranks.push_back(std::to_string(i+1) + ". " + student_names.at(i) + ": " + std::to_string(student_scores.at(i)));
     }
     return student_ranks;
 }

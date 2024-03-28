@@ -32,12 +32,9 @@ std::array<int, 4> letter_grades(int highest_score) {
     // TODO: Implement letter_grades
     std::array<int, 4> grades;
     grades.fill(0);
-    int value{41};
     int range = (highest_score - 40) / 4;
     for(int i = 0; i < 4; i++){
-        grades.at(i) = value;
-        std::cout << "20th century boys: " << value << std::endl;
-        value += range;
+        grades.at(i) = i * range + 41;
     }
     return grades;
 }
@@ -60,5 +57,10 @@ std::vector<std::string> student_ranking(std::vector<int> student_scores, std::v
 // Create a string that contains the name of the first student to make a perfect score on the exam.
 std::string perfect_score(std::vector<int> student_scores, std::vector<std::string> student_names) {
     // TODO: Implement perfect_score
+    int index{0};
+    for(const auto &iter1: student_scores){
+        if(iter1 == 100) return student_names.at(index);
+        index++;
+    }
     return "";
 }

@@ -45,7 +45,16 @@ std::array<int, 4> letter_grades(int highest_score) {
 // Organize the student's rank, name, and grade information in ascending order.
 std::vector<std::string> student_ranking(std::vector<int> student_scores, std::vector<std::string> student_names) {
     // TODO: Implement student_ranking
-    return {};
+    std::vector<std::string> student_ranks;
+    std::array<std::string, 2> format_container {". ", ": "};
+
+    int i = 1;
+    std::string parser{};
+    for(const auto &score: student_scores){
+        parser += std::to_string(i) + format_container.at(0) + std::to_string(score) + format_container.at(1) + student_names.at(i-1);
+        student_ranks.push_back(parser);
+    }
+    return student_ranks;
 }
 
 // Create a string that contains the name of the first student to make a perfect score on the exam.
